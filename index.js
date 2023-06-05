@@ -33,7 +33,7 @@ mongoose
   .then(() => {
     app.listen(port, () => console.log(`Server Port: ${port}`));
 
-    
+    console.log('connect')
   })
   .catch((error) => console.log(`${error} did not connect`));
 
