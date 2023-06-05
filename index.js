@@ -9,8 +9,9 @@ import userRoutes from "./routes/user.js"
 
 
 
-dotenv.config();
+ dotenv.config();
 const app=express();
+
 app.use(express.json());
 app.use(bodyParser.json());
 app.use(morgan("common"));
@@ -23,17 +24,16 @@ app.use("/user",userRoutes)
 
 
 /* MONGOOSE SETUP */
-const port = process.env.port || 2000;
+const PORT = process.env.PORT || 2000;
 
-mongoose
-  .connect(process.env.MONGO_URL, {
+mongoose.connect(process.env.MONGO_URL, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
   .then(() => {
-    app.listen(port, () => console.log(`Server Port: ${port}`));
+    app.listen(PORT, () => console.log(`Server Port: ${PORT}`));
 
     console.log('connect')
   })
-  .catch((error) => console.log(`${error} did not connect`));
+  .catch((error) => console.log(`${error} did not connect`))
 
