@@ -24,11 +24,12 @@ app.use("/user",userRoutes)
 
 
 /* MONGOOSE SETUP */
-const PORT = process.env.PORT || 9000;
+const PORT = process.env.PORT || dev;
 
 mongoose.connect(process.env.MONGO_URL, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
+   
   })
   .then(() => {
     app.listen(PORT, () => console.log(`Server Port: ${PORT}`));
