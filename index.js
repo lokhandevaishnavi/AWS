@@ -24,7 +24,7 @@ app.use("/user",userRoutes)
 
 
 /* MONGOOSE SETUP */
-const PORT = process.env.PORT || 2000;
+const PORT = process.env.PORT || test;
 
 mongoose.connect(process.env.MONGO_URL, {
     useNewUrlParser: true,
